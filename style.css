@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+/* body {
+    background-image: radial-gradient(circle at 16% 83%, rgba(148, 148, 148, 0.06) 0%, rgba(148, 148, 148, 0.06) 50%, rgba(63, 63, 63, 0.06) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(66, 66, 66, 0.06) 50%, rgba(105, 105, 105, 0.06) 50%, rgba(105, 105, 105, 0.06) 100%), radial-gradient(circle at 38% 50%, rgba(123, 123, 123, 0.06) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.06) 50%, rgba(172, 172, 172, 0.06) 100%), linear-gradient(90deg, hsl(18, 0%, 1%), hsl(18, 0%, 1%));
+} */
+
+body {
+    background-image: radial-gradient(circle at 16% 83%, rgba(76, 178, 206, 0.264) 0%, rgba(64, 140, 155, 0.23) 50%, rgba(109, 186, 201, 0.307) 50%, rgba(63, 63, 63, 0.06) 100%), radial-gradient(circle at 68% 87%, rgba(66, 66, 66, 0.06) 0%, rgba(59, 153, 161, 0.299) 50%, rgba(105, 105, 105, 0.06) 50%, rgba(105, 105, 105, 0.06) 100%), radial-gradient(circle at 38% 50%, rgba(84, 180, 186, 0.307) 0%, rgba(123, 123, 123, 0.06) 50%, rgba(172, 172, 172, 0.06) 50%, rgba(172, 172, 172, 0.06) 100%), linear-gradient(90deg, hsl(18, 0%, 1%), hsl(18, 0%, 1%));
+
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    overflow: hidden;
+    color: white;
+    font-family: 'Space Mono', monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#algorithm{
+    margin-block: 20px;
+    padding: 5px 10px;
+    font-size: medium;
+    border-radius: 5px;
+}
+
+#password{
+    margin: 20px 10px;
+    padding: 10px;
+    font-size: medium;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+}
+
+#inputText, #outputText{
+    width: 300px;
+    padding: 10px;
+    font-size: larger;
+    height: 200px;
+    margin-inline: 10px;
+    border-radius: 5px;
+}
+#password:focus, #inputText:focus, #outputText:focus{
+    outline: none;
+}
+.anahtar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sol{
+    display: flex;
+    flex-direction: column;
+}
+
+.alt{
+    display: flex;
+    justify-content: center;
+}
+.butonlar{
+    margin: 10px;
+}
+button{
+    padding-block: 8px;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 3px solid white;
+}
+
+button:hover{
+    background-color: transparent;
+    color: white;
+}

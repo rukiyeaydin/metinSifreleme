@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metin Şifreleme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Metin Şifreleme</h1>
+    <label for="algorithm">Algoritma Seçin:</label>
+    <select id="algorithm">
+      <option value="AES">AES</option>
+      <option value="DES">DES</option>
+      <option value="3DES">3DES</option>
+    </select>
+    <div class="anahtar">
+        <label for="password">Anahtar:</label>
+        <input type="text" id="password" placeholder="Anahtarınızı girin">
+    </div>
+    <div class="alt">
+        <div class="sol">
+            <textarea id="inputText" placeholder="Metni buraya girin"></textarea>
+            <div class="butonlar">
+                <button onclick="encrypt()">Şifrele</button>
+                <button onclick="decrypt()">Şifre çöz</button>
+            </div>
+        </div>
+        <textarea id="outputText" readonly></textarea>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script>
+    function encrypt() {
+      var algorithm = document.getElementById('algorithm').value;
+      var inputText = document.getElementById('inputText').value;
+      var password = document.getElementById('password').value;
+
+      if(!inputText || !password){
+        alert("Anahtarı ve metni giriniz.")
+      } else{
+        var encryptedText = '';
+
+        if (algorithm === 'AES') {
+        encryptedText = CryptoJS.AES.encrypt(inputText, password).toString();
+        } else if (algorithm === 'DES') {
+        encryptedText = CryptoJS.DES.encrypt(inputText, password).toString();
+        } else if (algorithm === '3DES') {
+        encryptedText = CryptoJS.TripleDES.encrypt(inputText, password).toString();
+        }
+
+        document.getElementById('outputText').value = encryptedText;
+      }
+
+    }
+
+    function decrypt() {
+      var algorithm = document.getElementById('algorithm').value;
+      var inputText = document.getElementById('inputText').value;
+      var password = document.getElementById('password').value;
+
+      if(!inputText || !password){
+        alert("Anahtarı ve metni giriniz.")
+      } else{
+        var decryptedText = '';
+
+        if (algorithm === 'AES') {
+        decryptedText = CryptoJS.AES.decrypt(inputText, password).toString(CryptoJS.enc.Utf8);
+        } else if (algorithm === 'DES') {
+        decryptedText = CryptoJS.DES.decrypt(inputText, password).toString(CryptoJS.enc.Utf8);
+        } else if (algorithm === '3DES') {
+        decryptedText = CryptoJS.TripleDES.decrypt(inputText, password).toString(CryptoJS.enc.Utf8);
+        }
+
+        document.getElementById('outputText').value = decryptedText;
+      }
+
+    }
+  </script>
+</body>
+</html>
